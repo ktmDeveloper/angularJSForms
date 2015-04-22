@@ -1,0 +1,121 @@
+﻿<div class="modal-header">
+    <h1>Create New Character</h1>
+</div>
+
+<div class="modal-body">
+    <form role="form" class="form-horizontal" name="employeeForm" novalidate>
+        <fieldset>
+            <legend>Basic Information</legend>
+            <div class="form-group" ng-class="{'has-error':employeeForm.fullName.$invalid && employeeForm.fullName.$dirty}">
+                <!-- dynamically add the 'has error' class by checking the angular expression -->
+                <label for="fullName" class="col-sm-3 control-label">Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" id="fullName" name="fullName" class="form-control" ng-model="editableEmployee.fullName" required />
+                    <span class="help-block" ng-show="employeeForm.fullName.$error.required  && employeeForm.fullName.$dirty">Full Name is Required.</span>
+                </div>
+            </div>
+
+
+            <div class="form-group" ng-class="{'has-error':employeeForm.house.$invalid && employeeForm.house.$dirty}">
+                <label for="house" class="col-sm-3 control-label">House:</label>
+                <div class="col-sm-9">
+                    <input type="text" id="house" name="house" class="form-control" ng-model="editableEmployee.house" required />
+                    <span class="help-block" ng-show="employeeForm.house.$error.required  && employeeForm.house.$dirty">House is Required.</span>
+                </div>
+            </div>
+
+
+            <div class="form-group" ng-class="{'has-error':employeeForm.qoutes.$invalid && employeeForm.qoutes.$dirty}">
+                <label for="qoutes" class="col-sm-3 control-label">qoutes:</label>
+                <div class="col-sm-9">
+                    <textarea name="qoutes" cols="5" rows="5" class="form-control" ng-model="editableEmployee.qoutes" required></textarea>
+                    <span class="help-block" ng-show="employeeForm.qoutes.$error.required  && employeeForm.qoutes.$dirty">Insert a qoute.</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="currentLocation" class="col-sm-3 control-label">Current Location</label>
+                <div class="col-sm-9">
+                    <select name="currentLocation" id="currentLocation" class="form-control" ng-model="editableEmployee.currentLocation" required>
+                        <option>Night's Watch</option>
+                        <option>King's Landing</option>
+                        <option>WinterFell</option>
+                        <option>Lannisport</option>
+                        <option>Pyke</option>
+                        <option>Dorne</option>
+                        <option>Harrenhal</option>
+                        <option>DragonStone</option>
+                        <option>Across the narrow Sea</option>
+                        <option>Unknown</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Characteristics:</legend>
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="dwarf" ng-model="editableEmployee.isDwarf" />Dwarf</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="canny" ng-model="editableEmployee.isCanny" />Canny</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="wealth" ng-model="editableEmployee.isWealthy" />Wealthy</label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="beloved" ng-model="editableEmployee.isBeloved" />Beloved</label>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Marital Status:</legend>
+            <div class="form-group">
+
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="maritalStatus" value="Single" ng-model="editableEmployee.maritalStatus" required />Single
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="maritalStatus" value="Married" ng-model="editableEmployee.maritalStatus" />Married
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="maritalStatus" value="Divorced" ng-model="editableEmployee.maritalStatus" />Divorced
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="maritalStatus" value="Widowed" ng-model="editableEmployee.maritalStatus" />Widowed
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="modal-footer">
+            <input type="submit" value="Submit" class="btn btn-primary" ng-click="submitForm()" ng-disabled="employeeForm.$invalid" />
+            <input type="reset" value="Reset" class="btn btn-warning" ng-click="resetForm()" />
+            <input type="button" value="Cancel" class="btn btn-default" ng-click="cancelForm()" />
+        </div>
+    </form>
+</div>

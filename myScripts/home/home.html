@@ -1,0 +1,71 @@
+﻿<div class="charlist well well-sm" id="charlist">
+
+    <div>
+        <ul>
+            <li ng-repeat="char in characters">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <img class="img-thumbnail" ng-src="{{char.image}}" alt="{{char.fullName}}" data-toggle="modal" data-target="#{{char.name}}" />
+                    </div>
+
+                    <div class="modal fade" id="{{char.name}}" tabindex="-1" role="definition">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>{{char.fullName}}</h2>
+                                </div>
+                                <div class="modal-body">
+                                     <img ng-src="{{char.image}}" alt="{{char.fullName}}" />
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-9">
+                        <h2 class="charName"><span class="label label-danger">Name: {{char.fullName}}</span></h2>
+                        <h3><span class="label label-default">House: {{char.house}}</span></h3>
+                        <h3><span class="label label-default">Qoutes: {{char.qoutes}} </span></h3>
+                        <h3><span class="label label-default">The current location of this Character is {{char.currentLocation}} and is currently {{char.maritalStatus}}.</span></h3>
+
+                        <form class="listcheckbox well">
+                            <div class="checkbox">
+                                <label>
+                                    Is this Character Beloved?  <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="{{char.isBeloved}}"></span>
+                                                                <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="!{{char.isBeloved}}"></span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                   Is this Character Canny?  <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="{{char.isCanny}}"></span>
+                                                              <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="!{{char.isCanny}}"></span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                    Is this Character Dwarf?  <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="{{char.isDwarf}}"></span>
+                                                               <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="!{{char.isDwarf}}"></span>
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                    Is this Character Wealthy? <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-show="{{char.isWealthy}}"></span>
+                                                                <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-show="!{{char.isWealthy}}"></span>
+                                </label>
+                            </div>
+
+                        </form>
+
+
+                        <input type="button" value="Update Character" class="btn btn-warning" ng-click="updateCharacter(char.name)" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

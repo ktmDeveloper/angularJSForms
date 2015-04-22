@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="formApp">
+<head>
+    <title>Game of Thrones Characters</title>
+    <link href="vendorCSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="myCSS/formApp.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <img class="img img-responsive" src="data/image/westeros.png" alt="Welcome to Westeros" />
+            <p>View, Add and Update Character details from the popular series of Game of Thrones.</p>
+            <div ng-controller="homeController">
+                <a href="#/home"><input type="button" class="btn btn-primary btn-lg" value="Home " /></a>
+                <input type="button" value="Add New Character" class="btn btn-primary btn-lg" ng-click="newCharacter()" />
+               
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mainContent">
+        <div ng-view></div>
+    </div>
+
+
+    <script src="vendorScripts/jquery-1.9.1.min.js"></script>
+    <script src="vendorScripts/bootstrap.min.js"></script>
+    <script src="vendorScripts/angular.min.js"></script>
+    <script src="vendorScripts/angular-route.min.js"></script>
+
+    <script src="myScripts/formApp.js"></script>
+    <script src="myScripts/home/homeController.js"></script>
+
+    <script src="myScripts/employeeForm/efController.js"></script>
+    <script src="myScripts/employeeForm/efDirective.js"></script>
+    <script src="myScripts/dataServices.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            
+            console.log("--------------------------------------------------------------------------");
+            console.log("My name is Shalindra Shrestha and I am the author of this small site. ");
+            console.log("You can contact me at shalindra.shrestha@gmail.com")
+            console.log("--------------------------------------------------------------------------");
+                     
+            });
+    </script>
+</body>
+</html>
