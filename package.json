@@ -1,0 +1,24 @@
+{
+  "name": "angularJSForms",
+  "version": "1.0.0",
+  "description": "Client-Side Validation form using AngularJS and Bootstrap.",
+  "main": "server.js",
+  "dependencies": {
+    "node-static": "^0.7.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktmDeveloper/angularJSForms.git"
+  },
+  "author": "Shalindra Shrestha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ktmDeveloper/angularJSForms/issues"
+  },
+  "homepage": "https://github.com/ktmDeveloper/angularJSForms"
+}
